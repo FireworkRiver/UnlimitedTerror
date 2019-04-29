@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>UnlimitedTerror</title>
+</head>
+<body>
+    <div id="welcome">
+		{% if request.session.logged == 1%}
+		<p/>欢迎 {{ request.session.player }}.
+		{% elif not request.session.logged %}
+		<a href="/login/"> 登录 </a><p/>
+		<a href="/register/"> 注册 </a><p/>
+		{% endif %}
+	</div>
+</body>
+</html>
